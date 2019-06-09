@@ -1,3 +1,6 @@
+// This code is available on the terms of the project LICENSE.md file,
+// also available online at https://blueoakcouncil.org/license/1.0.0.
+
 package main
 
 import (
@@ -30,16 +33,12 @@ func installurl() string {
 }
 
 func machine() string {
-	arch := "amd64"
 	cmd := exec.Command("uname", "-m")
 	output, err := cmd.Output()
 	if err != nil {
-		err := err.(*exec.ExitError)
-		os.Stderr.Write(err.Stderr)
-		os.Exit(err.ExitCode())
+		return "amd64"
 	}
-	arch = string(output[:len(output)-1]) // remove newline
-	return arch
+	return string(output[:len(output)-1]) // remove newline
 }
 
 var (
