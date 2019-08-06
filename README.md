@@ -11,6 +11,6 @@ location, copy `bsd.rd` to `/bsd.upgrade` and reboot.
 
 ```
 $ doas sh
-# cp /home/_sysupgrade/bsd.rd /bsd.upgrade
+# install -m 0700 /home/_sysupgrade/bsd.rd /bsd.upgrade
 # reboot
 ```
