@@ -96,7 +96,9 @@ func main() {
 		r = r.WithContext(ctx)
 		g.Go(func() error {
 			resp, err := http.DefaultClient.Do(r)
-			defer log.Printf("GET %s (%d)", file, resp.StatusCode)
+			if resp != nil {
+				defer log.Printf("GET %s (%d)", file, resp.StatusCode)
+			}
 			if err != nil {
 				return err
 			}
