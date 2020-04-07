@@ -44,7 +44,7 @@ func machine() string {
 var (
 	mirror = flag.String("mirror", installurl(), "snapshot mirror")
 	arch   = flag.String("arch", machine(), "CPU architecture")
-	rel    = flag.Int("release", 66, "OpenBSD release")
+	rel    = flag.Int("release", 67, "OpenBSD release")
 	dir    = flag.String("d", "/home/_sysupgrade", "download directory")
 	pubkey = flag.String("p", "", "signify pubkey file")
 )
@@ -77,7 +77,9 @@ func main() {
 		fetch[i] = strings.Replace(fetch[i], "ARCH", arch, 1)
 	}
 
-	mirror := fmt.Sprintf("%s/snapshots/%s/", *mirror, arch)
+	//mirror := fmt.Sprintf("%s/snapshots/%s/", *mirror, arch)
+	_ = fmt.Sprintf
+	mirror := "https://cdn.openbsd.org/pub/OpenBSD/6.6/amd64/"
 
 	log.Printf("Downloading latest snapshot from %v to %v", mirror, *dir)
 	ctx := context.Background()
