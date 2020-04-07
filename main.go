@@ -77,9 +77,7 @@ func main() {
 		fetch[i] = strings.Replace(fetch[i], "ARCH", arch, 1)
 	}
 
-	//mirror := fmt.Sprintf("%s/snapshots/%s/", *mirror, arch)
-	_ = fmt.Sprintf
-	mirror := "https://cdn.openbsd.org/pub/OpenBSD/6.6/amd64/"
+	mirror := fmt.Sprintf("%s/snapshots/%s/", *mirror, arch)
 
 	log.Printf("Downloading latest snapshot from %v to %v", mirror, *dir)
 	ctx := context.Background()
