@@ -44,7 +44,7 @@ func machine() string {
 var (
 	mirror = flag.String("mirror", installurl(), "snapshot mirror")
 	arch   = flag.String("arch", machine(), "CPU architecture")
-	rel    = flag.Int("release", 67, "OpenBSD release")
+	rel    = flag.Int("release", 68, "OpenBSD release")
 	dir    = flag.String("d", "/home/_sysupgrade", "download directory")
 	pubkey = flag.String("p", "", "signify pubkey file")
 )
